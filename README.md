@@ -22,10 +22,10 @@ Reponse 0 (No) is too dominant over 1 (Yes), in fact 87.74% 'No' Response and on
 ```python
 df_train.groupby('Response').mean()
 ```
-> id	Age	Driving_License	Region_Code	Previously_Insured	Annual_Premium	Policy_Sales_Channel	Vintage
-Response								
-0	190611.255476	38.178227	0.997694	26.336544	0.521742	30419.160276	114.851040	154.380243
-1	190152.264504	43.435560	0.999122	26.762963	0.003383	31604.092742	91.869086	154.112246
+> | Response | id |	Age |	Driving_License |	Region_Code |	Previously_Insured |	Annual_Premium |	Policy_Sales_Channel |	Vintage | 
+> | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+> | 0 |	190611.255476 |	38.178227 |	0.997694 |	26.336544 |	0.521742 |	30419.160276 |	114.851040 |	154.380243 |
+> | 1	| 190152.264504 |	43.435560 |	0.999122 |	26.762963 |	0.003383 |	31604.092742 |	91.869086 |	154.112246 |
  - The average with 1 Response is higher than 0 Response
  - The customer with no previous vehicle insurance far more interested in the vehicle insurance service
 
