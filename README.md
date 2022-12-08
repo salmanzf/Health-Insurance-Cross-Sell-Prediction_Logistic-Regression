@@ -175,4 +175,12 @@ print("Optimum number of features: %d" % rfe.n_features_)
 [ 4  8  1  9 11 10  7  5  3  6  2  1]\
 Optimum number of features: 2
 
-Only 2 independent variabel fits the criteria, which are 'Previously_Insured' and 'Vehicle_Damage_Yes'
+Only 2 independent variabel fits the criteria, which are 'Previously_Insured' and 'Vehicle_Damage_Yes'\
+ \
+```python
+#Menerapkan algoritma RFE ke dalam Train dan Test Set
+X_train_selected = rfe.transform(os_data_x)
+X_test_selected = rfe.transform(X_test)
+```
+# Logistic Regression
+
