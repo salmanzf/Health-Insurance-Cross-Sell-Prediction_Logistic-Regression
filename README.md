@@ -76,6 +76,9 @@ for var in cat_col:
 
 data_vars=df_train.columns.values.tolist()
 to_keep=[i for i in data_vars if i not in cat_col]
+#Insert the new column to new variable
+df_train_final=df_train[to_keep]
+df_train_final.columns.values
 ```
 
 
