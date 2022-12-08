@@ -68,6 +68,7 @@ plt.ylabel('Proportion of Response')
 ## Data Preparation (Cleaning)
 Since we found no NULL values in all of the column, we can proceed to create dummy variable on the categorical column using pandas One Hot Encoding.
 ```python
+#Categorical Column
 cat_col = ['Gender', 'Vehicle_Age', 'Vehicle_Damage']
 for var in cat_col:
   cat_list = pd.get_dummies(df_train[var], prefix=var)
@@ -76,9 +77,18 @@ for var in cat_col:
 
 data_vars=df_train.columns.values.tolist()
 to_keep=[i for i in data_vars if i not in cat_col]
+
 #Insert the new column to new variable
 df_train_final=df_train[to_keep]
 df_train_final.columns.values
 ```
+> array(['id', 'Age', 'Driving_License', 'Region_Code',
+       'Previously_Insured', 'Annual_Premium', 'Policy_Sales_Channel',
+       'Vintage', 'Response', 'Gender_Female', 'Gender_Male',
+       'Vehicle_Age_1-2 Year', 'Vehicle_Age_< 1 Year',
+       'Vehicle_Age_> 2 Years', 'Vehicle_Damage_No', 'Vehicle_Damage_Yes'],
+      dtype=object)
+ 
+ 
 
 
