@@ -171,7 +171,8 @@ print(rfe.support_)
 print(rfe.ranking_)
 print("Optimum number of features: %d" % rfe.n_features_)
 ```
-> [False False  True False False False False False False False False  True]
-[ 4  8  1  9 11 10  7  5  3  6  2  1]
+> [False False  True False False False False False False False False  True]\
+[ 4  8  1  9 11 10  7  5  3  6  2  1]\
 Optimum number of features: 2
+
 Only 2 independent variabel fits the criteria, which are 'Previously_Insured' and 'Vehicle_Damage_Yes'
