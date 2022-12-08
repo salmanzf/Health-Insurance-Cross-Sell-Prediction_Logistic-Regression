@@ -144,7 +144,8 @@ print('Panjang jumlah variabel NO setelah algoritma SMOTE', len(os_data_y[os_dat
 - 'Response' = 1 after SMOTE 250796
 - 'Response' = 0 after SMOTE 250796
 \
-Comparison data length BEFORE and AFTER SMOTE Algorithm:\
+Comparison data length BEFORE and AFTER SMOTE Algorithm:
+
 | Variable | Before SMOTE | After SMOTE |
 | --- | --- | --- |
 | data length | 285831 | 501592 |
