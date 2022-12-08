@@ -9,7 +9,7 @@ In general, we want to predict potential customer in the future based on the 'Re
 We will use the Logistic Regression algorithm to predict the potential customer.
 
 ## Data Exploration (EDA)
-'''python
+```python
 sns.countplot(x='Response', data=df_train)
 plt.show()
 '''
