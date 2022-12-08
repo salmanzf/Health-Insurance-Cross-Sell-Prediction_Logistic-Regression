@@ -12,4 +12,4 @@ We will use the Logistic Regression algorithm to predict the potential customer.
 ```python
 sns.countplot(x='Response', data=df_train)
 plt.show()
-'''
+```
