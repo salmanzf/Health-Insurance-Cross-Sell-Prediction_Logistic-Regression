@@ -1,7 +1,7 @@
 # Health Insurance Cross Sell Prediction using Logistic-Regression (with Data Imbalance Example)
 A health insurance company want to create a new Vehicle Insurance. Based on the Health Insurance customer, we want to predict how many interested in the new Vehicle Insurance.
 
-## Data Introduction
+# Data Introduction
 You can view the table structure in the following link
 data source: https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction
 
@@ -12,7 +12,7 @@ We will use the Logistic Regression algorithm to predict the potential customer.
 df_train = pd.read_csv('train.csv')
 ```
 
-## Data Exploration (EDA)
+# Data Exploration (EDA)
 ```python
 sns.countplot(x='Response', data=df_train)
 plt.show()
@@ -65,9 +65,9 @@ plt.ylabel('Proportion of Response')
 ```
   - Customer with Vehicle Damage far more interested in vehicle insurance
 
-## Data Preparation (Cleaning)
+# Data Preparation (Cleaning)
 Since we found no NULL values in all of the column, we can proceed to create dummy variable on the categorical column using pandas One Hot Encoding.
-### Create Dummy Variable
+## Create Dummy Variable
 ```python
 #Categorical Column
 cat_col = ['Gender', 'Vehicle_Age', 'Vehicle_Damage']
@@ -112,7 +112,7 @@ print('Panjang jumlah variabel NO sebelum algoritma SMOTE', len(y_train[y_train[
 - 'Response' = 1 before SMOTE 35035
 - 'Response' = 0 before SMOTE 250796
 
-### Feature Scaling
+## Feature Scaling
 For feature scaling, we use standardization from scikit-learn algorithm.
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -122,7 +122,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 ```
 
-## SMOTE Algorithm
+# SMOTE Algorithm
 SMOTE is an oversampling technique where the synthetic samples are generated for the minority class. We can see in the results later when we compare it with
 the results of the prediction without using SMOTE algorithm.
 ```python
@@ -152,3 +152,26 @@ Comparison data length BEFORE and AFTER SMOTE Algorithm:
 | data length | 285831 | 501592 |
 | 'Response' = 1 | 35035 | 250796 |
 | 'Response' = 0 | 250796 | 250796 |
+
+We can see the SMOTE Alogithm oversampling the minority (Response = 1) so data length match with the majority (Response = 0).
+
+# Recursive Feature Elimination Cross Validation (RFECV)
+RFECV is an automated Feature Selection to determine which independent variable is optimum for the predetermined criteria.
+```python
+from sklearn.feature_selection import RFECV
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold
+logit = LogisticRegression()
+rfe = RFECV(estimator=logit,
+            cv=10,
+            scoring='accuracy')
+rfe.fit(os_data_x, os_data_y.values.ravel())
+
+print(rfe.support_)
+print(rfe.ranking_)
+print("Optimum number of features: %d" % rfe.n_features_)
+```
+> [False False  True False False False False False False False False  True]
+[ 4  8  1  9 11 10  7  5  3  6  2  1]
+Optimum number of features: 2
+Only 2 independent variabel fits the criteria, which are 'Previously_Insured' and 'Vehicle_Damage_Yes'
