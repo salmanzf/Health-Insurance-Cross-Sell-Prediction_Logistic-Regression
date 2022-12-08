@@ -176,11 +176,28 @@ print("Optimum number of features: %d" % rfe.n_features_)
 Optimum number of features: 2
 
 Only 2 independent variabel fits the criteria, which are 'Previously_Insured' and 'Vehicle_Damage_Yes'\
- \
+  
 ```python
 #Menerapkan algoritma RFE ke dalam Train dan Test Set
 X_train_selected = rfe.transform(os_data_x)
 X_test_selected = rfe.transform(X_test)
 ```
-# Logistic Regression
+# Logistic Regression Algorithm
+```python
+#Training Model
+logit.fit(X_train_selected, os_data_y)
 
+#Predicting The Model
+from sklearn import metrics
+y_pred = logit.predict(X_test_selected)
+print('Accuracy of logistic regression classifier on test set: {:.2f}'.format(logit.score(X_test_selected, y_test)))
+```
+
+# Confusion Matrix
+Now lets see the comparison of performance WITH and WITHOUT using SMOTE Algorithm
+
+| Indicator | SMOTE | no-SMOTE |
+| --- | --- | --- |
+| Optimal Column with RFECV | 2 | 1 |
+| Accuracy | 64 % | 88 % |
+| Confusion Matrix | | |
