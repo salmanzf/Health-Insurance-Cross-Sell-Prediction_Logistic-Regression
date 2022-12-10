@@ -13,15 +13,11 @@ df_train = pd.read_csv('train.csv')
 ```
 
 # Data Exploration (EDA)
-```python
-sns.countplot(x='Response', data=df_train)
-plt.show()
-```
+
+[!Response](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/1_response.png)
+
 Reponse 0 (No) is too dominant over 1 (Yes), in fact 87.74% 'No' Response and only 12.26% 'Yes' Response. This will cause the imbalance in the prediction, and to achieve desirable accuracy the algorithm will only predict 0 (No) Response and still achieving 87.74% accuracy. This is not what we want, because we want to predict potential customer and need to predict the 1 (Yes) Response.
 
-```python
-df_train.groupby('Response').mean()
-```
 > | Response | id |	Age |	Driving_License |	Region_Code |	Previously_Insured |	Annual_Premium |	Policy_Sales_Channel |	Vintage | 
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 > | 0 |	190611.255476 |	38.178227 |	0.997694 |	26.336544 |	0.521742 |	30419.160276 |	114.851040 |	154.380243 |
@@ -29,40 +25,16 @@ df_train.groupby('Response').mean()
  - The average with 1 Response is higher than 0 Response
  - The customer with no previous vehicle insurance far more interested in the vehicle insurance service
 
-```python
-fig_gender = pd.crosstab(df_train.Gender, df_train.Response)
-fig_gender = fig_gender.div(fig_gender.sum(1).astype(float), axis=0).plot(kind='bar', stacked=True)
-for c in fig_gender.containers:
-    fig_gender.bar_label(c, label_type='center')
-plt.axhline(y=pct_neg, color='red')
-plt.title('Stacked Bar Chart of Age vs Response')
-plt.xlabel('Gender')
-plt.ylabel('Proportion of Response')
-```
+[!Gender](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/2_gender.png)
+
   - Male is more interested in the vehicle insurace service, althought not significant
 
-```python
-fig_vehicle_age = pd.crosstab(df_train.Vehicle_Age, df_train.Response)
-fig_vehicle_age = fig_vehicle_age.div(fig_vehicle_age.sum(1).astype(float), axis=0).plot(kind='bar', stacked=True)
-for c in fig_vehicle_age.containers:
-    fig_vehicle_age.bar_label(c, label_type='center')
-plt.axhline(y=pct_neg, color='red')
-plt.title('Stacked Bar Chart of Vehicle Age vs Response')
-plt.xlabel('Vehicle Age')
-plt.ylabel('Proportion of Response')
-```
+[!Vehicle_Age](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/3_VehicleAge.png)
+
   - Customer with older Vehicle Age are more interested in the new vehicle insurance
 
-```python
-fig_vehicle_dmg = pd.crosstab(df_train.Vehicle_Damage, df_train.Response)
-fig_vehicle_dmg = fig_vehicle_dmg.div(fig_vehicle_dmg.sum(1).astype(float), axis=0).plot(kind='bar', stacked=True)
-for c in fig_vehicle_dmg.containers:
-    fig_vehicle_dmg.bar_label(c, label_type='center')
-plt.axhline(y=pct_neg, color='red')
-plt.title('Stacked Bar Chart of Vehicle Damage vs Response')
-plt.xlabel('Vehicle Damage')
-plt.ylabel('Proportion of Response')
-```
+[!Vehicle_Damage](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/4_VehicleDamage.png)
+
   - Customer with Vehicle Damage far more interested in vehicle insurance
 
 # Data Preparation (Cleaning)
