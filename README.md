@@ -14,7 +14,7 @@ df_train = pd.read_csv('train.csv')
 
 # Data Exploration (EDA)
 
-![Response](https://raw.githubusercontent.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/streamlit/Image/1_response.png))
+![Response](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/1_response.png?raw=true)
 
 Reponse 0 (No) is too dominant over 1 (Yes), in fact 87.74% 'No' Response and only 12.26% 'Yes' Response. This will cause the imbalance in the prediction, and to achieve desirable accuracy the algorithm will only predict 0 (No) Response and still achieving 87.74% accuracy. This is not what we want, because we want to predict potential customer and need to predict the 1 (Yes) Response.
 
