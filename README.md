@@ -14,7 +14,7 @@ df_train = pd.read_csv('train.csv')
 
 # Data Exploration (EDA)
 
-[!Response](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/1_response.png)
+![Response](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/1_response.png)
 
 Reponse 0 (No) is too dominant over 1 (Yes), in fact 87.74% 'No' Response and only 12.26% 'Yes' Response. This will cause the imbalance in the prediction, and to achieve desirable accuracy the algorithm will only predict 0 (No) Response and still achieving 87.74% accuracy. This is not what we want, because we want to predict potential customer and need to predict the 1 (Yes) Response.
 
@@ -25,15 +25,15 @@ Reponse 0 (No) is too dominant over 1 (Yes), in fact 87.74% 'No' Response and on
  - The average with 1 Response is higher than 0 Response
  - The customer with no previous vehicle insurance far more interested in the vehicle insurance service
 
-[!Gender](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/2_gender.png)
+![Gender](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/2_gender.png)
 
   - Male is more interested in the vehicle insurace service, althought not significant
 
-[!Vehicle_Age](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/3_VehicleAge.png)
+![Vehicle_Age](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/3_VehicleAge.png)
 
   - Customer with older Vehicle Age are more interested in the new vehicle insurance
 
-[!Vehicle_Damage](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/4_VehicleDamage.png)
+![Vehicle_Damage](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/4_VehicleDamage.png)
 
   - Customer with Vehicle Damage far more interested in vehicle insurance
 
