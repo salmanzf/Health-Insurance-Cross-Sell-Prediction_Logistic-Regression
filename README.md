@@ -172,4 +172,4 @@ Now lets see the comparison of performance WITH and WITHOUT using SMOTE Algorith
 | --- | --- | --- |
 | Optimal Column with RFECV | 2 | 1 |
 | Accuracy | 64 % | 88 % |
-| Confusion Matrix | | |
+| Confusion Matrix | ![SMOTE](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/ConfusionMatrix_SMOTE.png) | ![no_SMOTE](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/ConfusionMatrix_no-SMOTE.png) |
