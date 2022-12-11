@@ -7,7 +7,11 @@ A health insurance company want to create a new Vehicle Insurance. Based on the 
 3. [Data Preparation (Cleaning)](#Data-Preparation-(Cleaning))
    1. [Create Dummy Variable](#Create-Dummy-Variable)
    2. [Split Train Test Dataset](#Split-Train-Test-Dataset)
-4. 
+   3. [Feature Scaling](#Feature-Scaling)
+4. [SMOTE Algorithm](#SMOTE-Algorithm)
+5. [Recursive Feature Elimination Cross Validation (RFECV)](#Recursive-Feature-Elimination-Cross-Validation-(RFECV))
+6. [Logistic Regression Algorithm](#Logistic-Regression-Algorithm)
+7. [Confusion Matrix & Conclusion](#Confusion Matrix & Conclusion)
 
 # Data Introduction
 You can view the table structure in the following link
