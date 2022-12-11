@@ -3,7 +3,11 @@ A health insurance company want to create a new Vehicle Insurance. Based on the 
 
 # Table of Content
 1. [Data Introduction](#Data-Introduction)
-2. [Data Exploration (EDA)] (#Data-Exploration-(EDA))
+2. [Data Exploration (EDA)](#Data-Exploration-(EDA))
+3. [Data Preparation (Cleaning)](#Data-Preparation-(Cleaning))
+   1. [Create Dummy Variable](#Create-Dummy-Variable)
+   2. [Split Train Test Dataset](#Split-Train-Test-Dataset)
+4. 
 
 # Data Introduction
 You can view the table structure in the following link
@@ -68,7 +72,7 @@ df_train_final.columns.values
  
  We can exclude the 'Region_Code' and 'Policy_Sales_Channel' since it contains too much variable and will make the function convoluted.
  
- ### Split Train-Test Dataset
+ ## Split Train-Test Dataset
  We will split the data into training and test set with ratio of 75-25.
  ```python
 #Penempatan Variabel
