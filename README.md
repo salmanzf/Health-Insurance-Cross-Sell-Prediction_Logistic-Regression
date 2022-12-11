@@ -3,6 +3,7 @@ A health insurance company want to create a new Vehicle Insurance. Based on the 
 
 # Table of Content
 1. [Data Introduction](#Data-Introduction)
+2. [Data Exploration (EDA)] (#Data-Exploration-(EDA))
 
 # Data Introduction
 You can view the table structure in the following link
