@@ -165,7 +165,7 @@ y_pred = logit.predict(X_test_selected)
 print('Accuracy of logistic regression classifier on test set: {:.2f}'.format(logit.score(X_test_selected, y_test)))
 ```
 
-# Confusion Matrix
+# Confusion Matrix & Conclusion
 Now lets see the comparison of performance WITH and WITHOUT using SMOTE Algorithm
 
 | Indicator | SMOTE | no-SMOTE |
@@ -173,3 +173,7 @@ Now lets see the comparison of performance WITH and WITHOUT using SMOTE Algorith
 | Optimal Column with RFECV | 2 | 1 |
 | Accuracy | 64 % | 88 % |
 | Confusion Matrix | ![SMOTE](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/ConfusionMatrix_SMOTE.png) | ![no_SMOTE](https://github.com/salmanzf/Health-Insurance-Cross-Sell-Prediction_Logistic-Regression/blob/streamlit/Image/ConfusionMatrix_no-SMOTE.png) |
+
+Although with SMOTE algorithm we have less Accuracy, we can see the prediction without SMOTE algoithm only predicts '0' (No) with no '1' (Yes) Response and it can achieve 88% accuracy. If we use the algorithm without SMOTE algorithm, we will not have a potential customer in the future since it is not predicting '1' Response. This is why imbalance dataset causes the misconception in prediction algorithm and where SMOTE algorithm is used. With SMOTE algorithm we can predict 11421 out of 11675 (97.82%) '1' Response. This algorithm is far useful since it can predict alot more potential customer in the future, eventhough it also cost a lot more for the marketing team since it has a lot of False Positive where 34334 out of 83603 (41.07%) are wrong '1' Response prediction.
+  
+At the end, it's up to business decision maker whether the profit from future potential customer is worth the extra marketing budget.
